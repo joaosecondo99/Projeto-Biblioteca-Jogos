@@ -1,0 +1,12 @@
+{
+  "games": [
+    {
+      "title": "Black 2",
+      "genre": "Tiro",
+      "rating": "10",
+      "status": "Zerado",
+      "id": "npGmRCu6ceQ"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
