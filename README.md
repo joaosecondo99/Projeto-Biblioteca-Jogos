@@ -1,10 +1,10 @@
-# 🎮 Game Library
+# 🎮 Biblioteca de Jogos
 
 Uma aplicação CRUD para gerenciar sua biblioteca de jogos, desenvolvida com JavaScript, Vite e json-server.
 
 ## 📋 Sobre o Projeto
 
-O **Game Library** é um projeto prático de portfólio que permite cadastrar, visualizar, editar e deletar jogos da sua biblioteca pessoal. O projeto foi desenvolvido com foco em boas práticas de organização de código, modularização e consumo de API REST.
+A **Biblioteca de Jogos** é um projeto prático de portfólio que permite cadastrar, visualizar, editar e deletar jogos da sua biblioteca pessoal. O projeto foi desenvolvido com foco em boas práticas de organização de código, modularização e consumo de API REST.
 
 ## ✨ Funcionalidades
 
