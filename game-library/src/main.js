@@ -26,16 +26,18 @@ async function handleSubmit(event) {
 
   if (editingId === null) {
     await addGame(gameData);
-    document.getElementById('form-btn').textContent = 'Editar'
+    document.getElementById('form-btn').classList.remove('btn-saving');
+    document.getElementById('form-btn').textContent = 'Adicionar'
     document.querySelector('#game-form').reset();
     init();
     
   } else {
     await updateGame(editingId, gameData)
-    console.log(gameData);
     editingId = null;
-    document.getElementById('form-btn').textContent = 'Editar'
+    document.getElementById('form-btn').classList.remove('btn-saving');
     document.querySelector('#game-form').reset();
+    document.getElementById('form-btn').textContent = 'Adicionar'
+
 
     init();
   }
@@ -51,14 +53,12 @@ async function handleListClick(event) {
   if (event.target.classList.contains('btn-edit')) {
     editingId = event.target.dataset.id;
 
+    document.getElementById('form-btn').classList.add('btn-saving')
     document.getElementById('form-btn').textContent = 'Salvar';
 
     document.querySelector('#game-title').value = event.target.dataset.title;
-
     document.querySelector('#game-genre').value = event.target.dataset.genre;
-
     document.querySelector('#game-rating').value = event.target.dataset.rating;
-
     document.querySelector('#game-status').value = event.target.dataset.status;
   }
 }

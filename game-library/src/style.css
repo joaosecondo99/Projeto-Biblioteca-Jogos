@@ -76,7 +76,8 @@ main {
 }
 
 #form-btn:hover {
-  background-color: #c73652;
+  background-color: #ffffff;
+  color: #000000;
 }
 
 #cancel-btn {
@@ -158,13 +159,23 @@ main {
 }
 
 .status-badge {
-  padding: 0.25rem 0.75rem;
+  padding: 0.25rem 0.55rem;
   border-radius: 20px;
   font-size: 0.8rem;
   font-weight: bold;
+  text-transform: capitalize;
 }
 
-.status-zerado { background-color: #2d6a4f; color: #b7e4c7; }
-.status-jogando { background-color: #1d3557; color: #a8dadc; }
-.status-na-fila { background-color: #4a4e69; color: #c9ada7; }
-.status-abandonado { background-color: #6b2737; color: #f4acb7; }
+.status-zerado { background-color: #2d6a4f; color: #ffffff !important; }
+.status-jogando { background-color: #b4a912; color: #ffffff !important; }
+.status-na-fila { background-color: #c731ae; color: #ffffff !important; }
+.status-abandonado { background-color: #b81a35; color: #ffffff !important; }
+
+#form-btn.btn-saving {
+  background-color: #2d6a4f;
+}
+
+#form-btn.btn-saving:hover {
+  background-color: white;
+  color: #000000;
+}

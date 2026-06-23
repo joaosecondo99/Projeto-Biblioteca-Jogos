@@ -12,7 +12,7 @@ export function renderGames(games) {
         <h3>${game.title}</h3>
         <span>${game.genre}</span>
         <span>${game.rating}</span>
-        <span>${game.status}</span>
+        <span class="status-badge status-${game.status.toLowerCase().replaceAll(' ', '-')}">${game.status}</span>
       </div>
         
       <div class="game-actions">
