@@ -1,20 +1,6 @@
 {
   "games": [
     {
-      "title": "Black",
-      "genre": "Tiro",
-      "rating": "10",
-      "status": "Na fila",
-      "id": "npGmRCu6ceQ"
-    },
-    {
-      "title": "League of Legends",
-      "genre": "Aventura",
-      "rating": "8",
-      "status": "Jogando",
-      "id": "SVImrTw2ITQ"
-    },
-    {
       "title": "Elder Scrolls VI",
       "genre": "Aventura RPG",
       "rating": "10",

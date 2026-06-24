@@ -46,8 +46,16 @@ async function handleSubmit(event) {
 async function handleListClick(event) {
   if (event.target.classList.contains('btn-delete')) {
     const gameId = event.target.dataset.id;
-    await deleteGame(gameId);
-    init();
+
+    let confirmed = false;
+    confirmed = window.confirm('Deseja realmente excluir o jogo?')
+
+    if (confirm) {
+      await deleteGame(gameId);
+      init();
+    } else {
+      return;
+    }
   }
 
   if (event.target.classList.contains('btn-edit')) {
