@@ -1,5 +1,6 @@
 import { renderGames } from "./ui/render"
 import { getGames, addGame, deleteGame, updateGame } from "./api/games"
+import { formButton, gameForm, gameGenre, gameRating, gameStatus, gameTitle, gamesList } from "./ui/elements";
 
 let editingId = null;
 
@@ -8,9 +9,8 @@ async function init() {
   renderGames(games);
 }
 
-document.querySelector('#game-form').addEventListener('submit', handleSubmit);
-
-document.querySelector('#games-list').addEventListener('click', handleListClick);
+gameForm.addEventListener('submit', handleSubmit);
+gamesList.addEventListener('click', handleListClick);
 
 
 async function handleSubmit(event) {
@@ -18,27 +18,22 @@ async function handleSubmit(event) {
 
   // Criando um objeto a partir das informações no formulário:
   const gameData = {
-    'title': document.querySelector('#game-title').value,
-    'genre': document.querySelector('#game-genre').value,
-    'rating': document.querySelector('#game-rating').value,
-    'status': document.querySelector('#game-status').value
+    'title': gameTitle.value,
+    'genre': gameGenre.value,
+    'rating': gameRating.value,
+    'status': gameStatus.value
   }
 
+  // Validando se ID for null, add o jogo, senão ele edita o jogo já que foi add
   if (editingId === null) {
     await addGame(gameData);
-    document.getElementById('form-btn').classList.remove('btn-saving');
-    document.getElementById('form-btn').textContent = 'Adicionar'
-    document.querySelector('#game-form').reset();
+    resetForm();
     init();
     
   } else {
     await updateGame(editingId, gameData)
     editingId = null;
-    document.getElementById('form-btn').classList.remove('btn-saving');
-    document.querySelector('#game-form').reset();
-    document.getElementById('form-btn').textContent = 'Adicionar'
-
-
+    resetForm();
     init();
   }
 }
@@ -50,7 +45,7 @@ async function handleListClick(event) {
     let confirmed = false;
     confirmed = window.confirm('Deseja realmente excluir o jogo?')
 
-    if (confirm) {
+    if (confirmed) {
       await deleteGame(gameId);
       init();
     } else {
@@ -61,14 +56,20 @@ async function handleListClick(event) {
   if (event.target.classList.contains('btn-edit')) {
     editingId = event.target.dataset.id;
 
-    document.getElementById('form-btn').classList.add('btn-saving')
-    document.getElementById('form-btn').textContent = 'Salvar';
+    formButton.classList.add('btn-saving')
+    formButton.textContent = 'Salvar';
 
-    document.querySelector('#game-title').value = event.target.dataset.title;
-    document.querySelector('#game-genre').value = event.target.dataset.genre;
-    document.querySelector('#game-rating').value = event.target.dataset.rating;
-    document.querySelector('#game-status').value = event.target.dataset.status;
+    gameTitle.value = event.target.dataset.title;
+    gameGenre.value = event.target.dataset.genre;
+    gameRating.value = event.target.dataset.rating;
+    gameStatus.value = event.target.dataset.status;
   }
+}
+
+function resetForm() {
+    formButton.classList.remove('btn-saving');
+    gameForm.reset();
+    formButton.textContent = 'Adicionar'
 }
 
 init();

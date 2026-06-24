@@ -1,7 +1,7 @@
-const gameList = document.querySelector('#games-list')
+import { gamesList } from "./elements"
 
 export function renderGames(games) {
-  gameList.innerHTML = ''
+  gamesList.innerHTML = ''
 
   games.forEach(game => {
     const gameCard = document.createElement('div')
@@ -26,6 +26,6 @@ export function renderGames(games) {
         <button class="btn-delete" data-id="${game.id}">Deletar</button>
       </div>
     `
-    gameList.appendChild(gameCard)
+    gamesList.appendChild(gameCard)
   })
 }

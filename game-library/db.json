@@ -41,6 +41,13 @@
       "rating": "8",
       "status": "Zerado",
       "id": "ZQs9bTnMajY"
+    },
+    {
+      "title": "Valorant",
+      "genre": "Tiro",
+      "rating": "5",
+      "status": "Jogando",
+      "id": "ZClwapsJc1Y"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
