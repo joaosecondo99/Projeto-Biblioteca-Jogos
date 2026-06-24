@@ -13,6 +13,34 @@
       "rating": "10",
       "status": "Zerado",
       "id": "KNNyKKM4lEo"
+    },
+    {
+      "title": "Far Cry 3",
+      "genre": "Tiro",
+      "rating": "10",
+      "status": "Zerado",
+      "id": "yp9hDJXa-PU"
+    },
+    {
+      "title": "Batman Arkham Knight",
+      "genre": "Aventura",
+      "rating": "10",
+      "status": "Zerado",
+      "id": "M5Ms9wMgMM4"
+    },
+    {
+      "title": "League of Legends",
+      "genre": "Aventura",
+      "rating": "10",
+      "status": "Jogando",
+      "id": "wLKNuTl3rMY"
+    },
+    {
+      "title": "Super Mario",
+      "genre": "Plataforma",
+      "rating": "8",
+      "status": "Zerado",
+      "id": "ZQs9bTnMajY"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
