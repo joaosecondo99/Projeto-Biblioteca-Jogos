@@ -1,4 +1,4 @@
-import { renderGames } from "./ui/render"
+import { renderGames, counter } from "./ui/render.js"
 import { getGames, addGame, deleteGame, updateGame } from "./api/games"
 import { formButton, gameForm, gameGenre, gameRating, gameStatus, gameTitle, gamesList } from "./ui/elements";
 
@@ -7,6 +7,7 @@ let editingId = null;
 async function init() {
   const games = await getGames();
   renderGames(games);
+  counter(games);
 }
 
 gameForm.addEventListener('submit', handleSubmit);
@@ -67,9 +68,9 @@ async function handleListClick(event) {
 }
 
 function resetForm() {
-    formButton.classList.remove('btn-saving');
-    gameForm.reset();
-    formButton.textContent = 'Adicionar'
+  formButton.classList.remove('btn-saving');
+  gameForm.reset();
+  formButton.textContent = 'Adicionar'
 }
 
 init();

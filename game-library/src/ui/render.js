@@ -1,4 +1,5 @@
-import { gamesList } from "./elements"
+import { gamesList } from "./elements.js"
+import { statusAbandoned, statusAwatingToPlay, statusFinished, statusPlaying, statusTotal } from "./elements.js"
 
 export function renderGames(games) {
   gamesList.innerHTML = ''
@@ -28,4 +29,18 @@ export function renderGames(games) {
     `
     gamesList.appendChild(gameCard)
   })
+}
+
+export function counter(games) {
+  statusTotal.textContent = games.length;
+
+  const finished = games.filter(game => game.status.toLowerCase() === 'zerado').length;
+  const playing = games.filter(game => game.status.toLowerCase() === 'jogando').length;
+  const awaitingToPlay = games.filter(game => game.status.toLowerCase() === 'na fila').length;
+  const abandoned = games.filter(game => game.status.toLowerCase() === 'abandonado').length;
+
+  statusFinished.textContent = finished;
+  statusPlaying.textContent = playing;
+  statusAwatingToPlay.textContent = awaitingToPlay;
+  statusAbandoned.textContent = abandoned;
 }

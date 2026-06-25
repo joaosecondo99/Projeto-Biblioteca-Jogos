@@ -9,11 +9,13 @@
   <body>
     <div id="app">
       <header>
-        <h1>🎮 Biblioteca de Jogos</h1>
+        <h1>Biblioteca de Jogos</h1>
       </header>
 
       <main>
+
         <!-- Formulário para adicionar/editar jogos -->
+
         <section id="form-section">
           <h2 id="form-title">Adicionar Jogo</h2>
           <form id="game-form">
@@ -57,13 +59,36 @@
               <option value="Abandonado">Abandonado</option>
             </select>
             <button type="submit" id="form-btn">Adicionar</button>
-            <button type="button" id="cancel-btn" style="display: none">
-              Cancelar
-            </button>
           </form>
         </section>
 
+        <!-- Status dos jogos -->
+
+        <section id="stats-section">
+          <div class="stat-card" id="stat-total">
+            <span class="stat-number">0</span>
+            <span class="stat-label">Total</span>
+          </div>
+          <div class="stat-card" id="stat-zerado">
+            <span class="stat-number">0</span>
+            <span class="stat-label">Zerados</span>
+          </div>
+          <div class="stat-card" id="stat-jogando">
+            <span class="stat-number">0</span>
+            <span class="stat-label">Jogando</span>
+          </div>
+          <div class="stat-card" id="stat-fila">
+            <span class="stat-number">0</span>
+            <span class="stat-label">Na Fila</span>
+          </div>
+          <div class="stat-card" id="stat-abandonado">
+            <span class="stat-number">0</span>
+            <span class="stat-label">Abandonados</span>
+          </div>
+        </section>
+
         <!-- Lista de jogos -->
+
         <section id="list-section">
           <h2>Minha Lista</h2>
           <div id="games-list"></div>
