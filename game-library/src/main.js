@@ -1,5 +1,6 @@
-import { renderGames, counter } from "./ui/render.js"
+import { renderGames, updateStats } from "./ui/render.js"
 import { getGames, addGame, deleteGame, updateGame } from "./api/games"
+import { getGameImage } from './api/rawg.js'
 import { formButton, gameForm, gameGenre, gameRating, gameStatus, gameTitle, gamesList } from "./ui/elements";
 
 let editingId = null;
@@ -7,7 +8,7 @@ let editingId = null;
 async function init() {
   const games = await getGames();
   renderGames(games);
-  counter(games);
+  updateStats(games);
 }
 
 gameForm.addEventListener('submit', handleSubmit);
@@ -17,12 +18,15 @@ gamesList.addEventListener('click', handleListClick);
 async function handleSubmit(event) {
   event.preventDefault();
 
+  const gameImage = await getGameImage(gameTitle.value);
+
   // Criando um objeto a partir das informações no formulário:
   const gameData = {
     'title': gameTitle.value,
     'genre': gameGenre.value,
     'rating': gameRating.value,
-    'status': gameStatus.value
+    'status': gameStatus.value,
+    'image': gameImage
   }
 
   // Validando se ID for null, add o jogo, senão ele edita o jogo já que foi add

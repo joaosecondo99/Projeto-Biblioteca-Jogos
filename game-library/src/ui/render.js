@@ -8,13 +8,23 @@ export function renderGames(games) {
     const gameCard = document.createElement('div')
 
     gameCard.className = 'game-card'
+
+    if (game.image) {
+      gameCard.style.backgroundImage = `linear-gradient(to right, transparent 30%, #16213e 60%), url('${game.image}')`
+      gameCard.style.backgroundSize = 'cover'
+      gameCard.style.backgroundPosition = 'left center'
+    }
+
     gameCard.classList.add(`border-${game.status.toLowerCase().replaceAll(' ', '-')}`);
+
     gameCard.innerHTML = `
       <div class="game-info">
         <h3>${game.title}</h3>
-        <span>${game.genre}</span>
-        <span>⭐ ${game.rating}</span>
-        <span class="status-badge status-${game.status.toLowerCase().replaceAll(' ', '-')}">${game.status}</span>
+        
+        <div class="game-details">
+          <span>${game.genre}</span>
+          <span>⭐ ${game.rating}</span>
+          <span class="status-badge status-${game.status.toLowerCase().replaceAll(' ', '-')}">${game.status}</span>
       </div>
         
       <div class="game-actions">
@@ -31,7 +41,7 @@ export function renderGames(games) {
   })
 }
 
-export function counter(games) {
+export function updateStats(games) {
   statusTotal.textContent = games.length;
 
   const finished = games.filter(game => game.status.toLowerCase() === 'zerado').length;
