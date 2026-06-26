@@ -8,7 +8,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "server": "json-server --watch db.json --port 3001",
-    "start": "concurrently \"npm run server\" \"npm run preview\"",
+    "start": "concurrently \"npm run server\" \"vite preview --port $PORT --host\"",
     "dev:full": "concurrently \"npm run server\" \"npm run dev\""
   },
   "devDependencies": {
