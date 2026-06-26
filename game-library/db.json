@@ -1,4 +1,45 @@
 {
-  "games": [],
+  "games": [
+    {
+      "title": "Assassin's Creed IV",
+      "genre": "Aventura",
+      "rating": "10",
+      "status": "Zerado",
+      "image": "https://media.rawg.io/media/games/849/849414b978db37d4563ff9e4b0d3a787.jpg",
+      "id": "uG80Bsks8MM"
+    },
+    {
+      "title": "Battlefield 4",
+      "genre": "Tiro",
+      "rating": "10",
+      "status": "Jogando",
+      "image": "https://media.rawg.io/media/games/ac7/ac7b8327343da12c971cfc418f390a11.jpg",
+      "id": "1sUEpJO2Ic8"
+    },
+    {
+      "title": "FIFA 17",
+      "genre": "Esporte",
+      "rating": "10",
+      "status": "Abandonado",
+      "image": "https://media.rawg.io/media/games/1a7/1a77ee44d7e91949aa794597d32c2e28.jpg",
+      "id": "Copc6gRW5XM"
+    },
+    {
+      "title": "Street Fighter V",
+      "genre": "Luta",
+      "rating": "10",
+      "status": "Na fila",
+      "image": "https://media.rawg.io/media/games/a32/a32c9c299488ca99afc3fcea605a7718.jpg",
+      "id": "BX4Oz9KURsk"
+    },
+    {
+      "title": "Resident Evil VII",
+      "genre": "Terror",
+      "rating": "10",
+      "status": "Abandonado",
+      "image": "https://media.rawg.io/media/games/cee/cee577e2097a59b77193fe2bce94667d.jpg",
+      "id": "9ZmxWrN-_j8"
+    }
+  ],
   "$schema": "./node_modules/json-server/schema.json"
 }
