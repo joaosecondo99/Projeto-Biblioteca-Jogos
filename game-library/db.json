@@ -39,6 +39,14 @@
       "status": "Abandonado",
       "image": "https://media.rawg.io/media/games/cee/cee577e2097a59b77193fe2bce94667d.jpg",
       "id": "9ZmxWrN-_j8"
+    },
+    {
+      "title": "Call of Duty: Black Ops",
+      "genre": "Tiro",
+      "rating": "10",
+      "status": "Zerado",
+      "image": "https://media.rawg.io/media/games/410/41033a495ce8f7fd4b0934bdb975f12a.jpg",
+      "id": "qLMnHA4e7zM"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

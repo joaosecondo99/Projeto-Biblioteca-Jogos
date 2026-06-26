@@ -1,4 +1,4 @@
-import { gamesList } from "./elements.js"
+import { gamesList, gameTitle, suggestions } from "./elements.js"
 import { statusAbandoned, statusAwatingToPlay, statusFinished, statusPlaying, statusTotal } from "./elements.js"
 
 export function renderGames(games) {
@@ -53,4 +53,24 @@ export function updateStats(games) {
   statusPlaying.textContent = playing;
   statusAwatingToPlay.textContent = awaitingToPlay;
   statusAbandoned.textContent = abandoned;
+}
+
+export function renderSuggestions(games) {
+  
+  suggestions.innerHTML = '';
+  const gameSuggestion = document.createElement('ul');
+
+  games.forEach(game => {
+    const gameSuggestionList = document.createElement('li');
+    gameSuggestionList.textContent = game.name;
+
+    gameSuggestion.append(gameSuggestionList);
+
+    gameSuggestionList.addEventListener('click', () => {
+      gameTitle.value = game.name
+      suggestions.innerHTML = ''
+    })
+  });
+
+  suggestions.appendChild(gameSuggestion);
 }

@@ -5,6 +5,7 @@ export const gameStatus = document.querySelector('#game-status');
 export const gameForm = document.querySelector('#game-form');
 export const gamesList = document.querySelector('#games-list');
 export const formButton = document.querySelector('#form-btn');
+export const suggestions = document.querySelector('#suggestions')
 
 export const statusTotal = document.querySelector('#stat-total .stat-number');
 export const statusPlaying = document.querySelector('#stat-jogando .stat-number');

@@ -22,3 +22,14 @@ export async function getGameImage(title) {
     return results[0].background_image;
 }
 
+export async function searchGames(search) {
+    const response = await axios.get(RAWG_URL, {
+        params: {
+            key: RAWG_API_KEY,
+            search: search
+        }
+    })
+
+    const results = response.data.results;
+    return results;
+}

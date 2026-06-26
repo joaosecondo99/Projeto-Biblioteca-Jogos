@@ -19,14 +19,17 @@
         <section id="form-section">
           <h2 id="form-title">Adicionar Jogo</h2>
           <form id="game-form">
-            <input type="hidden" id="game-id" />
-            <input
-              type="text"
-              class="input-full"
-              id="game-title"
-              placeholder="Nome do jogo"
-              required
-            />
+            <input type="hidden" id="game-id"/>
+            <div class="search-wrapper">
+              <input
+                type="text"
+                class="input-full"
+                id="game-title"
+                placeholder="Nome do jogo"
+                required
+              />
+              <div id="suggestions"></div>
+            </div>
             <select id="game-genre" aria-label="Gênero do jogo" required>
               <option value="" disabled selected>🎮 Gênero</option>
               <option value="Aventura">⚔️ Aventura</option>

@@ -1,7 +1,7 @@
-import { renderGames, updateStats } from "./ui/render.js"
+import { renderGames, updateStats, renderSuggestions } from "./ui/render.js"
 import { getGames, addGame, deleteGame, updateGame } from "./api/games"
-import { getGameImage } from './api/rawg.js'
-import { formButton, gameForm, gameGenre, gameRating, gameStatus, gameTitle, gamesList } from "./ui/elements";
+import { getGameImage, searchGames } from './api/rawg.js'
+import { formButton, gameForm, gameGenre, gameRating, gameStatus, gameTitle, gamesList, suggestions } from "./ui/elements";
 
 let editingId = null;
 
@@ -13,6 +13,7 @@ async function init() {
 
 gameForm.addEventListener('submit', handleSubmit);
 gamesList.addEventListener('click', handleListClick);
+gameTitle.addEventListener('input', handleSearch);
 
 
 async function handleSubmit(event) {
@@ -70,6 +71,21 @@ async function handleListClick(event) {
     gameStatus.value = event.target.dataset.status;
   }
 }
+
+async function handleSearch(event) {
+  const searchBar = gameTitle.value;
+
+  if (searchBar.length > 3) {
+    const resultSearch = await searchGames(searchBar);
+    renderSuggestions(resultSearch);
+  }
+}
+
+document.addEventListener('click', (event) => {
+  if (!event.target.closest('.search-wrapper')) {
+    suggestions.innerHTML = ''
+  }
+})
 
 function resetForm() {
   formButton.classList.remove('btn-saving');
