@@ -1,6 +1,6 @@
 // Importa a biblioteca AXIOS que instalamos via NPM. O AXIOS é responsável por fazer requisições HTTP (buscar, enviar, editar, deletar dados de uma API)
 import axios from 'axios'
-const API_URL = 'http://localhost:3001/games'
+const API_URL = import.meta.env.VITE_API_URL;
 
 
 export async function getGames() {
